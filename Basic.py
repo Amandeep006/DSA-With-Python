@@ -111,18 +111,84 @@
 
 
 """Find the mean, median and mode from the list."""
-import  statistics
+# import  statistics
 
-n=int(input("Enter the size of list:"))
+# n=int(input("Enter the size of list:"))
+# list=[]
+# for i in range(n):
+#     num=int(input(f"Enter the element {i+1} :"))
+#     list.append(num)
+
+# mn= statistics.mean(list)
+# md= statistics.median(list)
+# mo= statistics.mode(list)
+
+# print(f"The  list : {list}")
+# print(f"The mean, median and mode of list are {mn},{md} and {mo} respectively.")
+
+
+
+"""Print the 3 by 3 matrix."""
+# list=[[1,2,3],[4,5,6],[7,8,9]]
+# print(list[0][1])  
+
+# rw=int(input("Enter the Size of Row:"))
+# clm=int(input("Enter the size of Column:"))
+# list=[]
+
+# for i in range(rw):
+#     num=input(f"Enter the element {i+1}:").split()
+#     for j in range(clm):
+#         num[j]=int(num[j])
+#     list.append(num)
+
+# print(list)
+    
+
+"""Firstly create a 3X3 matrix and then print the diagonal elements of matrix."""
+
+# rw=int(input("Enter the Size of Rows:"))
+# clm=int(input("Enter the Size of Column:"))
+
+# list=[]
+# dia=[]
+# for i in range(rw):
+#     num=input(f"Enter the element of Row{i+1}: ").split()
+#     for j in range(clm):
+#         num[j]=int(num[j])
+        
+#     list.append(num)
+# print(list)
+
+# # Print the diagonal elements of the matrix.
+# for i in range(rw):
+#     for j in range(clm):
+#         if(i==j):
+#             dia.append(list[i][j])
+        
+# print(dia)
+
+"""Write a program to Transpose of the matrix."""
+rw=int(input("Enter the size of Rows:"))
+clm=int(input("Enter the size of Columns:"))
+
 list=[]
-for i in range(n):
-    num=int(input(f"Enter the element {i+1} :"))
+for i in range(rw):
+    num=input(f"Enter the elements of Row{i+1}:").split()
+    for j in range(clm):
+        num[j]=int(num[j])
+    
     list.append(num)
 
-mn= statistics.mean(list)
-md= statistics.median(list)
-mo= statistics.mode(list)
+# Transpose of the matrix.
 
-print(f"The  list : {list}")
-print(f"The mean, median and mode of list are {mn},{md} and {mo} respectively.")
+for i in range(rw):
+    for j in range(clm):
+        if(j>i):
+            temp=list[i][j]
+            list[i][j]=list[j][i]
+            list[j][i]=temp 
+           
+
+print(list)
 
