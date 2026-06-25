@@ -169,26 +169,36 @@
 # print(dia)
 
 """Write a program to Transpose of the matrix."""
-rw=int(input("Enter the size of Rows:"))
-clm=int(input("Enter the size of Columns:"))
+# rw=int(input("Enter the size of Rows:"))
+# clm=int(input("Enter the size of Columns:"))
 
-list=[]
-for i in range(rw):
-    num=input(f"Enter the elements of Row{i+1}:").split()
-    for j in range(clm):
-        num[j]=int(num[j])
+# list=[]
+# for i in range(rw):
+#     num=input(f"Enter the elements of Row{i+1}:").split()
+#     for j in range(clm):
+#         num[j]=int(num[j])
     
-    list.append(num)
+#     list.append(num)
 
-# Transpose of the matrix.
+# # Transpose of the matrix.
 
-for i in range(rw):
-    for j in range(clm):
-        if(j>i):
-            temp=list[i][j]
-            list[i][j]=list[j][i]
-            list[j][i]=temp 
+# for i in range(rw):
+#     for j in range(clm):
+#         if(j>i):
+#             temp=list[i][j]
+#             list[i][j]=list[j][i]
+#             list[j][i]=temp 
            
 
-print(list)
+# print(list)
 
+"""Identify the given string is palindrome or nor."""
+
+str=input("Enter your word: ").title()
+pal=str[::-1].title()
+
+if(str==pal):
+    print(f"The given string {str} is Palindrome.")
+
+else:
+    print(f"The given string {str} is not Palindrome.")
