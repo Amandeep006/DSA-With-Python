@@ -120,14 +120,101 @@ Given a list of integers, find and print both the largest and the smallest numbe
 # print(f"The minimum number in list : {min(list)}\nThe Maximum number in list : {max(list)}. ")
 
 
+#fifth commit
 """
-
-
-
 Write a script that takes a list containing duplicate items and returns a new list with only unique elements.
 """
+# data =[1,2,2,3,3,4,4,5,5,5,5]
+# unique=list(set(data))
+# print(f"THe unique list : {unique}")
 
 
 
+"""
+Write a function to return True if the first and last number of a given list is the same. If the numbers are different, return False.
+""" 
+
+# def check(list):
+#     n=list[-1]
+#     if(list[0]==n):
+#         return True
+#     elif(list[0]!=n):
+#         return False
+    
+
+# list=[10,20,30,40,10,30]
+# print(f"The first and last number is list is {check(list)}")
 
 
+"""
+Iterate through a given list of numbers and print only those numbers which are divisible by 5.
+"""
+
+# list=[10,20,33,46,55]
+
+# for i in list:
+#     if i%5==0:
+#         print(i, end=" ")
+
+
+"""
+Write a program to find how many times the substring “Emma” appears in a given string.
+"""
+
+# str="Emma is good developer. Emma is a writer"
+# print(f"The Emma word in str have {str.count("Emma")} times.")
+
+
+"""
+Print the following pattern where each row contains a number repeated a specific number of times based on its value.
+1
+22 
+333
+4444
+"""
+# n=int(input("Enter the size: "))
+# for i in range(n+1):
+#     for j in range(i):
+#         print(i,end=" ")
+#     print(" ")
+
+
+"""
+Write a program to check if a given number is a palindrome (reads the same forwards and backwards).
+"""
+# str=input("Enter your word: ").title()
+# pal=str[::-1].title()
+
+# if(str==pal):
+#     print(f"The given string {str} is Palindrome.")
+
+# else:
+#     print(f"The given string {str} is not Palindrome.")
+
+"""
+Create a new list from two given lists such that the new list contains odd numbers from the first list and even numbers from the second list.
+"""
+# list1=[10,20,25,30,35]
+# list2=[40,45,50,65,70]
+# list3=[]
+
+# for i in list1:
+#     if i%2!=0:
+#         list3.append(i)
+
+# for j in list2:
+#     if j%2==0:
+#         list3.append(j)
+
+# print(f"The commbined list of 1 and 2 : {list3}.")
+
+
+"""
+ Write a program to extract each digit from an integer in the reverse order.
+"""
+
+# a=int(input("Enter any number:"))
+# while(a>0):
+#     r=a%10
+#     a=a//10
+#     print(r, end="")
