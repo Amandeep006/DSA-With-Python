@@ -72,14 +72,14 @@
 
 """Fibonnaci series using Recursion."""
 
-# def fibb(n):
-#     if n==1 or n==2:
-#         return 1
+def fibb(n):
+    if n==1 or n==2:
+        return 1
     
-#     return fibb(n-1)+ fibb(n-2)
+    return fibb(n-1)+ fibb(n-2)
 
 
-# print(fibb(6))
+print(fibb(6))
 
 
 """Write a program to take a size a list from the user and also take those elements and print the sum of all numbers."""
@@ -202,3 +202,4 @@ if(str==pal):
 
 else:
     print(f"The given string {str} is not Palindrome.")
+# Fourth commit 
