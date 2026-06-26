@@ -16,28 +16,60 @@
 
 
 """2D array, find the maximum sum of rectangle. """
-list=[[-3,8,9,1,3],[-4,-1,1,7,-6],[-2,-3,8,1,-1]]
-maxnumsum=[]
-maxretsum=0
-maxretleft=0
-maxretright=0
-maxrettop=0
-maxretbottom=0
+import sys
+
+def kadaneAlgorthim(givenNums):
+    start=0
+    end=0
+
+    currSum=0
+    maxSum=-sys.maxsize -1
+
+    n=len(givenNums)
+
+    while end<n:
+        while currSum<0:
+            currSum-=givenNums[start]
+            start+=1
+
+        currSum+=givenNums[end]
+        end+=1
+
+        maxSum=max(maxSum,currSum)
+    
+    return maxSum
+
+
+list=[[3,8,9,1,3],[-4,-1,1,7,-6],[-2,-3,8,1,-1]]
 
 n=len(list) # Lenght of rows
 m=len(list[0]) # Length of columns
 
-# for i in range(n):
-#     for j in range(m):
-#         print(list[i][j],end=" ")
-#     print("")
+ans=-sys.maxsize -1
 
-print("----------------------------")
 
-# for i in range(n):
-#     for j in range()
-#     for j in range(m):
+for i in range(m):
+    temp=[]
+    for j in range(n):
+        temp.append(list[j][i])
 
-for i in range(n):
-    for j in range(m):
-        print(list[i][j] )
+    print(temp)
+
+    ans=max(ans, kadaneAlgorthim(temp))
+    print(ans)
+
+
+    for j in range(i+1,m):
+        for k in range(n):
+            temp[k]+=list[k][j]
+        
+        print(temp)
+
+        ans=max(ans, kadaneAlgorthim(temp))
+
+        print(ans)
+    
+    print("---------------------------")
+
+
+print(ans)
