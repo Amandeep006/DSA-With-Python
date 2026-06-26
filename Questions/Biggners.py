@@ -218,3 +218,70 @@ Create a new list from two given lists such that the new list contains odd numbe
 #     r=a%10
 #     a=a//10
 #     print(r, end="")
+
+# sixth commit
+
+
+"""
+Calculate income tax for a given income based on these rules:
+
+First $10,000: 0% tax
+Next $10,000: 10% tax
+Remaining income: 20% tax
+"""
+
+# income=int(input("Enter your income : ")) 
+
+# tax=0
+# first_half=income-10000
+# sec_tax=(10000*10)//100
+# second_half=first_half-10000
+# remain_tax=(second_half*20)//100
+
+# total_tax=sec_tax+remain_tax
+# print(f"The Total Pay able tax is {total_tax}.")
+
+# income = 45000
+# tax_payable = 0
+# print("Given income:", income)
+
+# if income <= 10000:
+#     tax_payable = 0
+# elif income <= 20000:
+#     # Tax on first 10k is 0. Tax on the rest is 10%
+#     tax_payable = (income - 10000) * 10 / 100
+# else:
+#     # First 10,000 (0% tax)
+#     # Next 10,000 (10% tax = 1,000)
+#     tax_payable = 0 + (10000 * 10 / 100) 
+#     # Remaining income (20% tax)
+#     tax_payable += (income - 20000) * 20 / 100
+
+# print("Total income tax to pay is", tax_payable)
+ 
+
+"""
+Print a multiplication table from 1 to 10 in a formatted grid.
+"""
+
+# for i in range(1,11):
+#     for j in range(1,11):
+#         print(j*i, end=" ")
+#     print("")
+
+
+"""
+Print a downward half-pyramid pattern using stars (*)
+*****
+****
+***
+**
+*
+"""
+
+n=int(input("Enter the size:"))
+for i in range(n,0,-1):
+    for j in range(i):
+        print("*", end=" ")
+
+    print("")
