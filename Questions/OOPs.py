@@ -88,23 +88,90 @@ Write a Python program to create a Product class with three instance attributes:
 Write a Python program to create a BankAccount class with a balance attribute and two methods: deposit(amount) that adds funds to the balance, and withdraw(amount) that deducts funds but prevents the balance from going below zero.
 """
 
-class BankAccount:
-    def __init__(self, balance):
-        self.balance=balance
+# class BankAccount:
+#     def __init__(self, balance):
+#         self.balance=balance
         
     
-    def deposit(self,fund):
-        self.balance+=fund
-        return self.balance
+#     def deposit(self,fund):
+#         self.balance+=fund
+#         return self.balance
 
-    def withdrawl(self,fund):
-        if (self.balance>fund):
-            self.balance-=fund
-            return self.balance
-        else:
-            return "There is no sufficient fund and add more funds to withdrawl."
+#     def withdrawl(self,fund):
+#         if (self.balance>fund):
+#             self.balance-=fund
+#             return self.balance
+#         else:
+#             return "There is no sufficient fund and add more funds to withdrawl."
         
-B1=BankAccount(1000)
-print(f"After Deposite :{B1.deposit(500)}")
-print(f"After Withdrawl:{B1.withdrawl(200)}")
-print(f"{B1.withdrawl(2000)}")
+# B1=BankAccount(1000)
+# print(f"After Deposite :{B1.deposit(500)}")
+# print(f"After Withdrawl:{B1.withdrawl(200)}")
+# print(f"{B1.withdrawl(2000)}")
+
+
+"""
+Write a Python program to create a Light class with three methods: turn_on() that switches the light on, turn_off() that switches it off, and status() that reports whether the light is currently on or off.
+"""
+# class Light:
+#     def __init__(self):
+#             self.light=False
+
+
+#     def light_on(self):
+#         self.light=True
+#         return "ON"
+    
+#     def light_off(self):
+#         self.light=False
+#         return "Off"
+    
+#     def status(self):
+#         if self.light==True:
+#             return "Light-on"
+#         else:
+#             return "Light-off"
+        
+# l1=Light()
+# print(l1.light_on())
+# print(l1.status())
+# print(l1.light_off())
+# print(l1.status())
+
+
+"""
+Write a Python program to create a User class that stores a username and a password. Add a check_password(input_password) method that returns True if the input matches the stored password, and False otherwise.
+"""
+# class User:
+#     def __init__(self, username, password):
+#         self.username=username
+#         self.password=password
+
+#     def check_password(self, input_password):
+#         if self.password==input_password:
+#             return "TRUE - Password is correct"
+#         else:
+#             return "FALSE- Password is not correct"
+        
+# U1=User("Palak Yadav","p112a11")
+# print(U1.check_password("p112a1"))
+
+
+"""
+Write a Python program to create a Temperature class that stores a temperature in Celsius. Add two methods: to_fahrenheit() that converts and returns the value in Fahrenheit, and to_kelvin() that converts and returns the value in Kelvin.
+"""
+
+class Temperature:
+    def __init__(self,calcius):
+        self.calcius=calcius
+    
+    def to_fahrenheit(self):
+        return (self.calcius * 18)+32
+    
+    def to_kelvin(self):
+        return self.calcius+273.15
+    
+
+T1=Temperature(32)
+print(f"Fahrenheit : {T1.to_fahrenheit()}")
+print(f"Kelvin : {T1.to_kelvin()}")
