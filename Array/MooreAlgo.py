@@ -36,12 +36,12 @@ def find_majority_element(arr):
             actual_count += 1
             
     if actual_count > len(arr) // 2:
-        return candidate
+        return f" Candidate : {candidate}, Actual_count : {actual_count} "
     else:
         return "No Majority Element Found"
 
 
-nums = [2, 2, 1, 1, 1, 2, 2]
+nums = [1,3,1,2,8]
 print("Majority Element:", find_majority_element(nums))
 
 
