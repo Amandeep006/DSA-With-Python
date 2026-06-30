@@ -208,5 +208,5 @@ class CoffeeMachine:
         self.coffee=coffee
         self.milk=milk
 
-    def make_latte(self):
+    
         
