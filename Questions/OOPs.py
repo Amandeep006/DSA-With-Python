@@ -161,17 +161,52 @@ Write a Python program to create a User class that stores a username and a passw
 Write a Python program to create a Temperature class that stores a temperature in Celsius. Add two methods: to_fahrenheit() that converts and returns the value in Fahrenheit, and to_kelvin() that converts and returns the value in Kelvin.
 """
 
-class Temperature:
-    def __init__(self,calcius):
-        self.calcius=calcius
+# class Temperature:
+#     def __init__(self,calcius):
+#         self.calcius=calcius
     
-    def to_fahrenheit(self):
-        return (self.calcius * 18)+32
+#     def to_fahrenheit(self):
+#         return (self.calcius * 18)+32
     
-    def to_kelvin(self):
-        return self.calcius+273.15
+#     def to_kelvin(self):
+#         return self.calcius+273.15
     
 
-T1=Temperature(32)
-print(f"Fahrenheit : {T1.to_fahrenheit()}")
-print(f"Kelvin : {T1.to_kelvin()}")
+# T1=Temperature(32)
+# print(f"Fahrenheit : {T1.to_fahrenheit()}")
+# print(f"Kelvin : {T1.to_kelvin()}")
+
+"""
+Write a Python program to create a Notebook class that maintains an internal list of notes. Add an add_note(note) method that appends a new note to the list, and a show_notes() method that prints all stored notes.
+"""
+# class Notebook:
+#     def __init__(self):
+#         self.notes=[]
+
+#     def add_notes(self,note):
+#         self.notes.append(note)
+
+#     def show_notes(self):
+#         for i in range(len(self.notes)):
+#             print(f"{i+1}. {self.notes[i]}")
+        
+
+# N1=Notebook()
+# N1.add_notes("Math")
+# N1.add_notes("physics")
+# N1.add_notes("Chemistry")
+# N1.show_notes()
+
+
+"""
+Write a Python program to create a CoffeeMachine class that tracks three resource attributes: water, coffee, and milk (in ml/g). Add a make_latte() method that checks whether sufficient resources are available, deducts them if so, and prints an appropriate message in either case.
+"""
+
+class CoffeeMachine:
+    def __init__(self,water,coffee,milk):
+        self.water=water
+        self.coffee=coffee
+        self.milk=milk
+
+    def make_latte(self):
+        
