@@ -1,4 +1,31 @@
 """
+Access Specifier in the OOPS :
+There are three access specifier in the programming language and in python also same.
+1. Public 2. Private and 3. Protected
+"""
+class Student:
+    name="a"
+    age=0
+    # _password="" # It show that this attribute is protected.
+    __password="" # It show that this attribute is private. It gives error if we print this attribute.
+
+    @property
+    def password(self):
+        print("getter is called")
+        return self.__password
+    
+    @password.setter
+    def password(self,newPass):
+        print("setter is called")
+        self.__password=newPass
+
+
+S1=Student()
+S1.password="123"
+print(S1.password)
+
+
+"""
 Write a Python program to create a class named Vehicle that has no variables or methods defined inside it.
 """
 
@@ -202,11 +229,47 @@ Write a Python program to create a Notebook class that maintains an internal lis
 Write a Python program to create a CoffeeMachine class that tracks three resource attributes: water, coffee, and milk (in ml/g). Add a make_latte() method that checks whether sufficient resources are available, deducts them if so, and prints an appropriate message in either case.
 """
 
-class CoffeeMachine:
-    def __init__(self,water,coffee,milk):
-        self.water=water
-        self.coffee=coffee
-        self.milk=milk
+# class CoffeeMachine:
+#     def __init__(self,water,coffee,milk):
+#         self.water=water
+#         self.coffee=coffee
+#         self.milk=milk
 
-    
+#     def make_latte(self,water,coffee,milk):
+#         if (self.water>=water) and (self.coffee>=coffee) and (self.milk>=milk):
+#             remW=self.water-water
+#             remC=self.coffee-coffee
+#             remM=self.milk-milk
+#             print(f"Latte Made : Remaining- Water :{remW}ml, Coffee : {remC}g and Milk : {remM}ml.")
+
+#             if (remW >=water) and (remC>=coffee) and (remM>=milk):
+#                 print("Can I make one more lattee !")
+#             else:
+#                 print("Not enought resources to make a lattee.")
+
+# L1=CoffeeMachine(300,100,200)
+# L1.make_latte(200,20,150)
+# print("--------------------------")
+# L1.make_latte(10,20,50)
+
+
+"""
+Write a Python program to create a Vehicle class with a class attribute color = "White" that is shared by all instances. Create two vehicle objects and demonstrate that both share the same default color, then show that changing the class attribute updates all instances that have not overridden it.
+"""
         
+class Vechicle :
+    color="White"
+    def __init__(self,name,speed):
+        self.name=name
+        self.speed=speed
+    
+
+
+V1=Vechicle("Tesla",200)
+V2=Vechicle("BMW",250)
+print(f"{V1.name}:- Color: {V1.color}, Speed: {V1.speed}")
+print(f"{V2.name}:- Color: {V2.color}, Speed: {V2.speed}")
+# print("------------------")
+Vechicle.color="Red"
+print(f"{V1.name}:- Color: {V1.color}, Speed: {V2.speed}")
+print(f"{V2.name}:- Color: {V2.color}, Speed: {V1.speed}")
