@@ -3,26 +3,26 @@ Access Specifier in the OOPS :
 There are three access specifier in the programming language and in python also same.
 1. Public 2. Private and 3. Protected
 """
-class Student:
-    name="a"
-    age=0
-    # _password="" # It show that this attribute is protected.
-    __password="" # It show that this attribute is private. It gives error if we print this attribute.
+# class Student:
+#     name="a"
+#     age=0
+#     # _password="" # It show that this attribute is protected.
+#     __password="" # It show that this attribute is private. It gives error if we print this attribute.
 
-    @property
-    def password(self):
-        print("getter is called")
-        return self.__password
+#     @property
+#     def password(self):
+#         print("getter is called")
+#         return self.__password
     
-    @password.setter
-    def password(self,newPass):
-        print("setter is called")
-        self.__password=newPass
+#     @password.setter
+#     def password(self,newPass):
+#         print("setter is called")
+#         self.__password=newPass
 
 
-S1=Student()
-S1.password="123"
-print(S1.password)
+# S1=Student()
+# S1.password="123"
+# print(S1.password)
 
 
 """
@@ -257,19 +257,90 @@ Write a Python program to create a CoffeeMachine class that tracks three resourc
 Write a Python program to create a Vehicle class with a class attribute color = "White" that is shared by all instances. Create two vehicle objects and demonstrate that both share the same default color, then show that changing the class attribute updates all instances that have not overridden it.
 """
         
-class Vechicle :
-    color="White"
-    def __init__(self,name,speed):
-        self.name=name
-        self.speed=speed
+# class Vechicle :
+#     color="White"
+#     def __init__(self,name,speed):
+#         self.name=name
+#         self.speed=speed
     
 
 
-V1=Vechicle("Tesla",200)
-V2=Vechicle("BMW",250)
-print(f"{V1.name}:- Color: {V1.color}, Speed: {V1.speed}")
-print(f"{V2.name}:- Color: {V2.color}, Speed: {V2.speed}")
-# print("------------------")
-Vechicle.color="Red"
-print(f"{V1.name}:- Color: {V1.color}, Speed: {V2.speed}")
-print(f"{V2.name}:- Color: {V2.color}, Speed: {V1.speed}")
+# V1=Vechicle("Tesla",200)
+# V2=Vechicle("BMW",250)
+# print(f"{V1.name}:- Color: {V1.color}, Speed: {V1.speed}")
+# print(f"{V2.name}:- Color: {V2.color}, Speed: {V2.speed}")
+# # print("------------------")
+# Vechicle.color="Red"
+# print(f"{V1.name}:- Color: {V1.color}, Speed: {V2.speed}")
+# print(f"{V2.name}:- Color: {V2.color}, Speed: {V1.speed}")
+
+
+"""
+Write a Python program to create a Vehicle parent class with name and max_speed attributes and a display() method. Then create a Bus child class that inherits everything from Vehicle without adding anything new, and confirm that an instance of Bus can access the parent's method.
+"""
+
+# class Vechicle :
+#     def __init__(self,name,max_speed):
+#         self.name=name
+#         self.max_speed=max_speed
+
+#     def display(self):
+#         print(f"Vechicle: {self.name}, Max_speed: {self.max_speed} km/hr.")
+
+    
+
+# class Bus(Vechicle):
+#     pass
+
+# B1=Bus("School Bus",120)
+# B1.display()
+
+
+"""
+Write a Python program where a Vehicle parent class has a seating_capacity() method that accepts a capacity argument. Create a Bus child class that overrides this method to provide a default seating capacity of 50, using super() to call the parent's version internally.
+"""
+
+# class Vechicle:
+#     def __init__(self,name,max_speed):
+#         self.name=name
+#         self.max_speed=max_speed
+
+#     def seating_capacity(self,capacity):
+#         print(f"{self.name} seating capacity is: {capacity}")
+
+# class Bus(Vechicle):
+#     def seating_capacity(self):
+#         super().seating_capacity(50)
+    
+
+    
+# B1=Bus("School Bus", 120)
+# B1.seating_capacity()
+
+"""
+Write a Python program that creates a Vehicle parent class with a base fare, then extends a Taxi child class that adds a 10% maintenance fee on top of the base fare using super().
+"""
+
+# class Vechicle :
+#     def __init__(self, name):
+#         self.name=name
+
+#     def base_fare(self,base_fare):
+#         base_fare=base_fare+(base_fare*10)/100
+#         print(f"Total fare with maintenance fee: {base_fare}")
+        
+
+# class Taxi(Vechicle):
+#     def base_fare(self,base_fare):
+#         super().base_fare(base_fare)
+
+
+# n=int(input("Enter the base fare of the Taxi :"))
+# T1=Taxi("OLa")
+# T1.base_fare(n)
+
+
+"""
+Write a Python program that defines an Animal base class with a speak() method, then overrides it in Dog and Cat subclasses to return their respective sounds.
+"""
+
