@@ -344,3 +344,126 @@ Write a Python program that creates a Vehicle parent class with a base fare, the
 Write a Python program that defines an Animal base class with a speak() method, then overrides it in Dog and Cat subclasses to return their respective sounds.
 """
 
+# class Animals:
+#     def speak(self):
+#         print("Animals make a sound")
+
+# class Dog(Animals):
+#     def speak(self):
+#         print("Dog says: Woof!")
+
+# class Cat(Animals):
+#     def speak(self):
+#         print("Cat says: Meow!")
+
+# dog=Dog()
+# cat=Cat()
+# dog.speak()
+# cat.speak()
+
+
+"""
+Write a Python program that defines an Employee base class, then creates FullTimeEmployee and PartTimeEmployee subclasses, each implementing different pay calculation logic.
+"""
+# class Employee:
+#     def __init__(self,name):
+#         self.name=name
+    
+#     def salary(self):
+#         return 0
+
+# class FullTimeEmployee(Employee):
+#     def __init__(self,name,pay):
+#         super().__init__(name)
+#         self.pay=pay
+
+#     def salary(self):
+#         return self.pay/12
+
+# class PartTimeEmployee(Employee):
+#     def __init__(self,name,hr_rate,hr_worked):
+#         super().__init__(name)
+#         self.hr_rate=hr_rate
+#         self.hr_worked=hr_worked
+
+#     def salary(self):
+#         return self.hr_rate*self.hr_worked
+
+# ft=FullTimeEmployee("Alice",60000)
+# pt=PartTimeEmployee("Bob",500,20)
+
+
+# print(f"{ft.name}'s monthly pay: {ft.salary()}")
+# print(f"{pt.name}'s monthly pay: {pt.salary()}")
+
+
+"""
+Write a Python program that defines a Shape base class with an area() method, then implements it in Circle, Square, and Triangle subclasses using the appropriate geometric formulas.
+"""
+
+# class Shape:
+#     def Area(self):
+#         return 0
+
+# class Circle(Shape):
+#     def __init__(self,radius):
+#         self.radius=radius
+
+#     def Area(self):
+#         return (3.14*self.radius*self.radius)
+    
+# class Square(Shape):
+#     def __init__(self,side):
+#         self.side=side
+
+#     def Area(self):
+#         return (self.side*self.side)
+
+# class Triangle(Shape):
+#     def __init__(self,base,height):
+#         self.base=base
+#         self.height=height
+
+#     def Area(self):
+#         return (self.base*self.height)/2
+    
+# circle=Circle(7)
+# square=Square(4)
+# triangle=Triangle(6,8)
+
+# print(f"Circle area: {circle.Area()}")
+# print(f"Square area : {square.Area()}")
+# print(f"Triangle area : {triangle.Area()}")
+
+
+"""
+Write a Python program that defines a Media base class, then creates Book, Magazine, and DVD subclasses, each with type-specific attributes and a describe() method.
+"""
+
+class MediaBase:
+    
+    def __init__(self,name,price,des):
+        self.name=name
+        self.price=price
+        self.des=des
+
+    
+class Book(MediaBase):    
+    def desc(self):
+        return self.des
+
+class Magazine(MediaBase):
+    def des(self):
+        return self.des
+    
+class DVD(MediaBase):
+    def des(self):
+        return self.des
+
+book=Book("clean code",499,"Robert C. Martin")
+magazine=Magazine("Wired",150,"Monthly")
+dvd=DVD("Inception",299,148)
+
+print(f"Book: {book.name} by {book.des} - Rs.{book.price}")
+print(f"Magazine: {magazine.name} by {magazine.des} - Rs.{magazine.price}")
+print(f"DVD: {dvd.name} by {dvd.des} - Rs.{dvd.price}")
