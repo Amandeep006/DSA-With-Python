@@ -440,30 +440,394 @@ Write a Python program that defines a Shape base class with an area() method, th
 Write a Python program that defines a Media base class, then creates Book, Magazine, and DVD subclasses, each with type-specific attributes and a describe() method.
 """
 
-class MediaBase:
+# class MediaBase:
     
-    def __init__(self,name,price,des):
-        self.name=name
-        self.price=price
-        self.des=des
+#     def __init__(self,name,price,des):
+#         self.name=name
+#         self.price=price
+#         self.des=des
 
     
-class Book(MediaBase):    
-    def desc(self):
-        return self.des
+# class Book(MediaBase):    
+#     def desc(self):
+#         return self.des
 
-class Magazine(MediaBase):
-    def des(self):
-        return self.des
+# class Magazine(MediaBase):
+#     def des(self):
+#         return self.des
     
-class DVD(MediaBase):
-    def des(self):
-        return self.des
+# class DVD(MediaBase):
+#     def des(self):
+#         return self.des
 
-book=Book("clean code",499,"Robert C. Martin")
-magazine=Magazine("Wired",150,"Monthly")
-dvd=DVD("Inception",299,148)
+# book=Book("clean code",499,"Robert C. Martin")
+# magazine=Magazine("Wired",150,"Monthly")
+# dvd=DVD("Inception",299,148)
 
-print(f"Book: {book.name} by {book.des} - Rs.{book.price}")
-print(f"Magazine: {magazine.name} by {magazine.des} - Rs.{magazine.price}")
-print(f"DVD: {dvd.name} by {dvd.des} - Rs.{dvd.price}")
+# print(f"Book: {book.name} by {book.des} - Rs.{book.price}")
+# print(f"Magazine: {magazine.name} by {magazine.des} - Rs.{magazine.price}")
+# print(f"DVD: {dvd.name} by {dvd.des} - Rs.{dvd.price}")
+
+
+"""
+Write a Python program that creates an Order class with a total amount, then creates a DiscountedOrder subclass that applies a 10% discount to the total.
+"""
+
+# class Order:
+#     def __init__(self,order_ID):
+#         self.order_ID=order_ID
+       
+
+# class DiscountedOrder(Order):
+#     def __init__(self, order_id,total_amount):
+#         super().__init__(order_id)
+#         self.total_amount=total_amount
+    
+#     def discount(self):
+#         self.total_amount-=(self.total_amount*10)/100
+#         return self.total_amount
+
+
+# do=DiscountedOrder("ORD001",1200)
+# print(f"Order ID: {do.order_ID}")
+# print(f"Original Total: {do.total_amount}")
+# print(f"Discounted Total: {do.discount()}")    
+
+
+
+"""
+Write a Python program that defines a Vehicle base class and creates Bike, Truck, and Bus subclasses, each defining a unique max_speed attribute and a describe() method.
+"""
+
+# class Vechicle:
+#     def __init__(self, name,max_speed):
+#         self.name=name
+#         self.max_speed=max_speed
+
+#     def desc(self,des):
+#         self.des=des
+#         return self.des
+
+# class Bike(Vechicle):
+#     def __init__(self,name,max_speed):
+#         super().__init__(name,max_speed)
+
+#         print(f"Bike max speed: {self.max_speed} km/h")
+
+#     def desc(self,des):
+#         self.des=des
+#         return self.des
+        
+
+# class Truck(Vechicle):
+#     def __init__(self,name,max_speed):
+#         super().__init__(name,max_speed)
+
+#         print(f"Truck max speed: {self.max_speed} km/h")
+
+#     def desc(self,des):
+#         self.des=des
+#         return self.des
+    
+
+# class Bus(Vechicle):
+#     def __init__(self,name,max_speed):
+#         super().__init__(name,max_speed)
+
+#         print(f"Bus max speed: {self.max_speed} km/h")
+
+#     def desc(self,des):
+#         self.des=des
+#         return self.des
+        
+
+# Bike("Bike",120)
+# Truck("Truck",90)
+# Bus("Bus",100)
+
+
+"""
+Write a Python program that creates objects from multiple classes and uses the built-in type() function to identify which class each object belongs to.
+"""
+
+# class Dog:
+#     def ret(self):
+#          return "Dog"
+# class Cat:
+#     def ret(self):
+#         return "Cat"
+# class Vechicle:
+#     def ret(self):
+#         return "Vechicle"
+
+# d=Dog()
+# c=Cat()
+# v=Vechicle()
+
+# print(f"d is of type: {type(d).__name__}")
+# print(f"c is of type: {type(c).__name__}")
+# print(f"v is of type: {type(v).__name__}")
+
+# type(obj): Returns the class (type object) that obj was created from. For example, type(d) returns <class '__main__.Dog'>.
+# type(obj).__name__: The .__name__ attribute on the returned type object gives just the plain string name of the class, such as "Dog", without the module prefix.
+
+# class Dog:
+#     pass
+
+# class Cat:
+#     pass
+
+# class Vehicle:
+#     pass
+
+# d = Dog()
+# c = Cat()
+# v = Vehicle()
+
+# objects = {"d": d, "c": c, "v": v}
+
+# for name, obj in objects.items():
+#     print(f"{name} is of type: {type(obj).__name__}")
+
+
+"""
+Write a Python program that uses isinstance() to check whether an object is an instance of a given class, and issubclass() to check whether one class is a subclass of another.
+"""
+
+# class Animal:
+#     pass
+
+# class Dog(Animal):
+#     pass
+
+# d=Dog()
+
+# print("Is d an instance of Dog?", isinstance(d, Dog))
+# print("Is d an instance of Animal?", isinstance(d, Animal))
+# print("Is Dog a subclass of Animal?", issubclass(Dog, Animal))
+# print("Is Animal a subclass of Dog?", issubclass(Animal, Dog))
+
+
+
+"""
+Write a Python program that creates a Vector class representing a 2D vector, and implements the __add__ dunder method so that two Vector objects can be added using the + operator.
+"""
+# __add__(self, other): Python calls this method automatically when the + operator is used between two Vector objects. self is the left operand and other is the right.
+
+# __repr__: Defines the string representation of the object used by print() and the interactive shell. Without it, print(result) would display something like <__main__.Vector object at 0x...>.
+
+
+# class Vector:
+#     def __init__(self,x,y):
+#         self.x=x
+#         self.y=y
+
+#     def __add__(self,other):
+#         return Vector(self.x+other.x,self.y+other.y)
+    
+#     def __repr__(self):
+#         return f"Vector({self.x},{self.y})"
+     
+    
+
+# V1=Vector(2,3)
+# V2=Vector(4,1)
+
+# v=V1+V2
+# print(v)
+
+
+"""
+Write a Python program that creates a Cart class that stores a list of items, and implements __len__ so that calling len(cart) returns the number of items currently in the cart.
+"""
+
+# class Cart:
+#     def __init__(self,lst_items):
+#         self.lst_items=lst_items
+
+#     def __len__(self):
+#         return len(self.lst_items)
+    
+
+# C1=Cart(['Apple','Banana','Mango'])
+# print(f"Number of items in cart: {len(C1)}")
+
+
+"""
+Write a Python program that creates a BankAccount class where the balance is stored as a private attribute __balance, and exposed safely through a @property getter and a setter that validates the value before updating it.
+"""
+# class BankAccount:
+    
+#     def __init__(self,balance):
+#         self.__balance=balance
+
+#     @property
+#     def balance(self):
+#         return self.__balance
+
+#     @balance.setter
+#     def balance(self, amount):
+#         if amount < 0:
+#             print("Invalid balance. Must be non-negative.")
+#         else:
+#             self.__balance = amount
+
+#     def deposite(self,amount):
+#         self.balance=self.__balance+amount
+    
+
+# B1=BankAccount(1000)
+# print(B1.balance)
+# B1.deposite(500)
+# print(B1.balance)
+
+# B1.balance=-200
+
+
+"""
+Write a Python program that creates a Multiplier class which stores a factor, and implements __call__ so that an instance of the class can be invoked directly like a function to multiply a given number by that factor.
+"""
+# self.factor: Stores the multiplier value at construction time. This is the state that distinguishes callable objects from plain functions: the object remembers its configuration between calls.
+# __call__(self, value): Python invokes this method whenever the object is called using parentheses, such as triple(10). Without this method, doing so would raise a TypeError: 'Multiplier' object is not callable.
+
+
+# class Multiplier:
+#     def __init__(self,factor):
+#         self.factor=factor
+
+#     def __call__(self,value):
+#         return self.factor*value
+    
+
+# M1=Multiplier(3)
+# M2=Multiplier(5)
+
+# print(M1(10))
+# print(M2(7))
+
+
+"""
+Write a Python program that creates a Passenger class and a Flight class. The Flight class should manage a list of Passenger objects and block further bookings when the seat capacity is reached.
+"""
+
+# class Passenger:
+#     def __init__(self,name):
+#         self.name=name
+
+# class Flight:
+#     def __init__(self,flight,capacity):
+#         self.flight=flight
+#         self.capacity=capacity
+#         self.passengers=[]      
+        
+
+#     def Booked(self,passengers):
+#         if len(self.passengers)< self.capacity:
+#             print(f"{passengers.name} booked on Flight AI202.")
+#         else:
+#             print("Flight AI202 is fulled.")
+
+# flight=Flight("Ai202",2)
+# flight.Booked(Passenger("Alice"))
+# flight.Booked(Passenger("Bob"))
+# flight.Booked(Passenger("Charlie"))
+# flight.Booked(Passenger("Alex"))
+
+
+
+"""
+   Write a Python program that defines an Animal base class with an eat() method, creates a few subclasses with their own eat() implementations, and builds a Zoo class that holds a list of animals and calls eat() on all of them via a feed_all() method.
+"""  
+
+# class Animals:
+#     def eat(self):
+#         return "eating"
+
+# class Lion(Animals):
+#      def eat(self):
+#         return "Lion eats meat."
+
+# class Elephant(Animals):
+#      def eat(self):
+#         return "Elephants eats grass."
+    
+# class Parrot(Animals):
+#      def eat(self):
+#         return "Parrot eats seeds."
+    
+# class ZOO:
+#     def __init__(self):
+#         self.animals=[]
+
+#     def add_animal(self,animal):
+#         self.animals.append(animal)
+    
+#     def feed_all(self):
+#         for animal in self.animals:
+#             print(animal.eat())
+
+
+# zoo=ZOO()
+# zoo.add_animal(Lion())
+# zoo.add_animal(Elephant())
+# zoo.add_animal(Parrot())
+    
+# zoo.feed_all()
+        
+
+"""
+Write a Python program that creates a Character class with health, exp, and level attributes. The character should automatically level up and reset exp whenever accumulated experience reaches or exceeds 100.
+"""
+
+# class Character:
+#     def __init__(self, name, health):
+#         self.name = name
+#         self.health = health
+#         self.exp = 0
+#         self.level = 1
+
+#     def gain_exp(self, amount):
+#         self.exp += amount
+#         if self.exp >= 100:
+#             self.exp -= 100
+#             self.level += 1
+#             print(f"{self.name} gained {amount} exp. Level up! Now Level {self.level}. (Remaining exp: {self.exp})")
+#         else:
+#             print(f"{self.name} gained {amount} exp. (Total: {self.exp})")
+
+# hero = Character("Aria", health=100)
+# hero.gain_exp(60)
+# hero.gain_exp(60)
+
+"""
+Write a Python program that defines a Song class and a Playlist class. The Playlist should support adding songs, removing songs by title, and shuffling the order of the playlist randomly.
+"""
+import random
+class Songs:
+    def song(self):
+        return "songs"
+
+class Playlist:
+    def __init__(self):
+        self.songs=[]
+
+    def add_songs(self,title):
+        self.songs.append(title)
+        return self.songs
+    
+    def remove_songs(self,title):
+        self.songs.remove(title)
+        return title
+
+    def shuffle(self):
+        random.shuffle(self.songs)
+        print(f"After Shuffle: (Order will vary) : {self.songs}")
+
+
+P1=Playlist()
+P1.add_songs("Blinding Lights")
+P1.add_songs("Levitating")
+P1.add_songs("Peaches")
+print(f"Playlist: {P1.songs}")
+print(f"Removed: {P1.remove_songs("Levitating")}")
+P1.shuffle()
