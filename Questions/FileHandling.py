@@ -41,3 +41,13 @@ for i in data:
     list.append(i)
 
 print(list)
+
+
+"""
+ Write a Python program that reads all lines from a file called items.txt into a list and prints the list.
+"""
+
+with open("user.txt", "r") as f:
+    lines = f.readlines()
+
+print(lines)
