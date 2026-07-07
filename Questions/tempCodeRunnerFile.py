@@ -1,2 +1,1 @@
-B1.deposite(500)
-# print(B1.balance)
+data=path.read_text()
