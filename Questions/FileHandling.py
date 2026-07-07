@@ -117,10 +117,81 @@ Write a Python program that checks whether a file called data.txt exists in the 
 """
 Write a Python program that reads a file called data.txt and counts the total number of words across all its lines.
 """
-count=1
-with open ("Output.txt") as f:
+# count=0
+# with open ("Output.txt") as f:
+#     data=f.read()
+
+# words=data.split()
+
+# for word in words:
+#     count+=1
+
+# print(f"{count} number or words are prsent in the whole file.")
+
+"""
+Write a Python program that reads a file called data.txt and counts the total number of characters it contains, including spaces and newlines.
+"""
+
+# count=0
+# with open ("Output.txt") as f:
+#     datas=f.read()
+
+# for word in datas:
+#     count+=1
+
+# print(f"{count} number or words are prsent in the whole file.")
+
+
+"""
+Write a Python program that reads a file called data.txt and counts how many times the word Python appears in it.
+"""
+
+# count=0
+# with open ("Output.txt") as f:
+#     data=f.read()
+
+# print(f"Python occurrce at {data.count("Python")}")
+
+
+"""
+Write a Python program that reads and prints only the first 3 lines from a file called data.txt.
+"""
+# with open ("Output.txt","r") as f:
+#     datas=f.readlines()[:3]
+
+# for data in datas:
+#     print(data,end="")
+
+
+"""
+Write a Python program that reads and prints only the last 3 lines from a file called data.txt.
+"""
+# with open ("Output.txt","r") as f:
+#     datas=f.readlines()
+
+# n=len(datas)
+
+# for data in datas[n-3:]:
+#     print(data,end="")
+
+
+"""
+Write a Python program that reads a file called data.txt and prints only the lines at positions 1, 3, and 5 (using 1-based line numbering).
+"""
+
+# with open ("Output.txt","r") as f:
+#     datas=f.readlines()
+
+# n=len(datas)
+
+# for data in datas[::2]:
+#     print(data,end="")
+
+"""
+Write a Python program to read a text file and find the longest word present in it.
+"""
+with open("Output.txt","r") as f:
     data=f.read()
 
-words=data.split()
-
-print(f"{count} number or words are prsent in the whole file.")
+longest_word=max(data.split(),key=len)
+print(f"{longest_word.title()} is the longest word in the file.")
