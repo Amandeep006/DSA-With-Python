@@ -190,8 +190,29 @@ Write a Python program that reads a file called data.txt and prints only the lin
 """
 Write a Python program to read a text file and find the longest word present in it.
 """
-with open("Output.txt","r") as f:
-    data=f.read()
+# with open("Output.txt","r") as f:
+#     data=f.read()
 
-longest_word=max(data.split(),key=len)
-print(f"{longest_word.title()} is the longest word in the file.")
+# longest_word=max(data.split(),key=len), # key=len is used the compare the words based of every word. and max () is compare the numbers directly.
+# print(f"{longest_word.title()} is the longest word in the file.")
+
+"""
+Write a Python program to read a text file and count how many times each letter of the alphabet appears in it.
+"""
+
+# with open("Output.txt","r") as f:
+#     data=f.read()
+
+# frequency={}
+# for letter in data:
+#     if letter in frequency:
+#         frequency[letter]+=1
+
+#     else:
+#         frequency[letter]=1
+
+# print(frequency)
+
+"""
+Write a Python program to search for a specific word in a file and print the line numbers where that word appears.
+"""
