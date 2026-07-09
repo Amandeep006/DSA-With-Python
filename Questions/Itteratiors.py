@@ -109,18 +109,36 @@ Write a generator expression (one-liner) that yields powers of 2 (e.g., 1, 2, 4,
 Write a generator to produce the first n numbers in the Fibonacci sequence, where each number is the sum of the two preceding ones.
 """
 
-def fibonacci(num,a,b):
-    print(0,1, end=" ")
-    while(num>0):
-        c=a+b
-        yield c
-        a=b
-        b=c
+# def fibonacci(num,a,b):
+#     print(0,1, end=" ")
+#     while(num>0):
+#         c=a+b
+#         yield c
+#         a=b
+#         b=c
 
-        num-=1
+#         num-=1
 
 
-n=int(input("Enter the sizee of fibonacci series : "))
-for num in fibonacci(n-2,0,1):
-    print(num, end=" ")
+# n=int(input("Enter the sizee of fibonacci series : "))
+# for num in fibonacci(n-2,0,1):
+#     print(num, end=" ")
    
+
+"""
+Create a generator that starts at 1 and counts up infinitely (don’t run this without a break condition!).
+"""
+
+def count(n):
+    i=1
+    while True:
+        if (i==n+1):
+            break
+        yield i
+        i=i+1
+
+        
+
+for i in count(9):
+    print(i, end=" ")
+        
