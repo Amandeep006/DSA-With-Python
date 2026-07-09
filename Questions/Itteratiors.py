@@ -44,7 +44,7 @@ Re-implement a simplified version of the range() function using a generator.
 #     current=start
 
 #     while current<stop:
-#         yield current  # Yield : it keyword is used to transform a standard function  into a generator functions. : It pause the execution, saves the function's state and output  te values.
+#         yield current  # Yield : it keyword is used to transform a standard function  into a generator functions. : It pause the execution, saves the function's state and output the values.
 #         current +=step
 
 # for num in custom_range(2,10,2):
@@ -55,21 +55,43 @@ Re-implement a simplified version of the range() function using a generator.
 Write an iterator class that takes a string and returns its characters in reverse order.
 """
 
-class Reverse:
-    def __init__(self,text):
-        self.text=text
-        self.index=len(text)-1
+# class Reverse:
+#     def __init__(self,text):
+#         self.text=text
+#         self.index=len(text)-1
 
-    def __iter__(self):
-        return self
+#     def __iter__(self):
+#         return self
     
-    def __next__(self):
-        if self.index<0:
-            raise StopIteration
+#     def __next__(self):
+#         if self.index<0:
+#             raise StopIteration
         
-        char = self.text[self.index]
-        self.index-=1
-        return char
+#         char = self.text[self.index]
+#         self.index-=1
+#         return char
     
-for char in Reverse("Hello"):
-    print(char,end=" ")
+# for char in Reverse("Hello"):
+#     print(char,end=" ")
+
+
+"""
+ Create a generator that takes a string and yields only the vowels found in it.
+"""
+
+# def vowels(text):
+        
+#     vowels="aeiou"
+
+#     for char in text:
+#         if char.lower() in vowels:
+#             yield char
+
+
+# for vowel in vowels("hello! world"):
+#     print(vowel, end=" ")
+
+
+"""
+Write a generator expression (one-liner) that yields powers of 2 (e.g., 1, 2, 4, 8…).
+"""
