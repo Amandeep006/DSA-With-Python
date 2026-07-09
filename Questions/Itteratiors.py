@@ -95,3 +95,32 @@ Write an iterator class that takes a string and returns its characters in revers
 """
 Write a generator expression (one-liner) that yields powers of 2 (e.g., 1, 2, 4, 8…).
 """
+
+
+# def power(n):
+#     for i in range(n):
+#         yield 2**i
+
+
+# for num in power(8):
+#     print(num, end=" ")
+
+"""
+Write a generator to produce the first n numbers in the Fibonacci sequence, where each number is the sum of the two preceding ones.
+"""
+
+def fibonacci(num,a,b):
+    print(0,1, end=" ")
+    while(num>0):
+        c=a+b
+        yield c
+        a=b
+        b=c
+
+        num-=1
+
+
+n=int(input("Enter the sizee of fibonacci series : "))
+for num in fibonacci(n-2,0,1):
+    print(num, end=" ")
+   
