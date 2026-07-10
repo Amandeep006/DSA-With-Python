@@ -146,44 +146,31 @@ Create a generator that starts at 1 and counts up infinitely (don’t run this w
 """
 Given a list [10, 20, 30], use the iter() and next() functions to print each element manually, catching the StopIteration exception.
 """
-
-# class Iterate :
-#     def __init__(self,num):
-#         self.num=num
-#         self.current=0
-#         self.n=len(num)-1
-
-#     def __itre__(self):
-#         self
-
-#     def __next__(self):
-#         if self.n<0:
-#             raise StopIteration
-        
-#         self.current+=1
-#         yield self.name[:self.current]
-
-
-
-# for list in Iterate[10,20,30]:
-#     print(list, end=" ",)
-        
-
-num=[10,20,30]
-itr=iter(num) #iter() and next() funtion from the core engine of the Iterator Protocol,which allows you to fetch data elements one at a time.
+ #iter() and next() funtion from the core engine of the Iterator Protocol,which allows you to fetch data elements one at a time.
 
 # iter() converts an iterable object (like a list, tuple, or string) into an iterator object.
-# next() manually extracts the subsequent data element from that iterator each time it is execute
-while True:
-    try:
-        value=next(itr)
-        print(value, end=" ")
+# next() manually extracts the subsequent data element from that iterator each time it is execute.
 
-    except StopIteration:
-        break
+# num=[10,20,30]
+# itr=iter(num)
+
+# while True:
+#     try:
+#         values=next(itr)
+#         print(values, end=" ")
+#     except:
+#         StopIteration
 
 
 """
 Create an iterator that takes a start, stop, and step, returning values just like range() but allowing for float steps.
 """
 
+def iterate(start,stop,step):
+    num=start
+    while num<stop:
+        yield num
+        num+=step
+        
+for i in iterate(0.0,1.0,0.25):
+    print(i, end=" ")
