@@ -129,16 +129,61 @@ Write a generator to produce the first n numbers in the Fibonacci sequence, wher
 Create a generator that starts at 1 and counts up infinitely (don’t run this without a break condition!).
 """
 
-def count(n):
-    i=1
-    while True:
-        if (i==n+1):
-            break
-        yield i
-        i=i+1
+# def count(n):
+#     i=1
+#     while True:
+#         if (i==n+1):
+#             break
+#         yield i
+#         i=i+1
 
         
 
-for i in count(9):
-    print(i, end=" ")
+# for i in count(9):
+#     print(i, end=" ")
         
+
+"""
+Given a list [10, 20, 30], use the iter() and next() functions to print each element manually, catching the StopIteration exception.
+"""
+
+# class Iterate :
+#     def __init__(self,num):
+#         self.num=num
+#         self.current=0
+#         self.n=len(num)-1
+
+#     def __itre__(self):
+#         self
+
+#     def __next__(self):
+#         if self.n<0:
+#             raise StopIteration
+        
+#         self.current+=1
+#         yield self.name[:self.current]
+
+
+
+# for list in Iterate[10,20,30]:
+#     print(list, end=" ",)
+        
+
+num=[10,20,30]
+itr=iter(num) #iter() and next() funtion from the core engine of the Iterator Protocol,which allows you to fetch data elements one at a time.
+
+# iter() converts an iterable object (like a list, tuple, or string) into an iterator object.
+# next() manually extracts the subsequent data element from that iterator each time it is execute
+while True:
+    try:
+        value=next(itr)
+        print(value, end=" ")
+
+    except StopIteration:
+        break
+
+
+"""
+Create an iterator that takes a start, stop, and step, returning values just like range() but allowing for float steps.
+"""
+
