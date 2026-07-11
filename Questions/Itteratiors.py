@@ -192,14 +192,32 @@ Write a generator that reads a large text file line-by-line to avoid loading the
 """
 Create a generator that yields rows from a CSV file as dictionaries, using the first row as keys.
 """
-def dictionary(filepath):
-    with open(filepath,"r") as f:
-        header =next(f).strip().split(",")
-        for line  in f:
-            values=line.strip().split(",")
+# def dictionary(filepath):
+#     with open(filepath,"r") as f:
+#         header =next(f).strip().split(",")
+#         for line  in f:
+#             values=line.strip().split(",")
 
-            yield dict(zip(header,values))
+#             yield dict(zip(header,values))
        
        
-for row in dictionary("data.csv"):
-    print(row)
+# for row in dictionary("data.csv"):
+#     print(row)
+
+"""
+Create two generators: one that yields numbers and another that squares them. Pipe the first into the second.
+"""
+
+def number_producer(num):
+
+    for item in num:
+        yield Squares(item)
+
+    
+def Squares(num):
+    return num ** 2
+
+
+num=[1,2,3,4,5]
+for i in number_producer(num):
+    print(i, end=" ")
