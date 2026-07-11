@@ -166,11 +166,40 @@ Given a list [10, 20, 30], use the iter() and next() functions to print each ele
 Create an iterator that takes a start, stop, and step, returning values just like range() but allowing for float steps.
 """
 
-def iterate(start,stop,step):
-    num=start
-    while num<stop:
-        yield num
-        num+=step
+# def iterate(start,stop,step):
+#     num=start
+#     while num<stop:
+#         yield num
+#         num+=step
         
-for i in iterate(0.0,1.0,0.25):
-    print(i, end=" ")
+# for i in iterate(0.0,1.0,0.25):
+#     print(i, end=" ")
+
+
+"""
+Write a generator that reads a large text file line-by-line to avoid loading the entire file into memory.
+"""
+
+# def read_lines(filepath):
+#     with open (filepath,"r") as f:
+#         for line in f:
+#             yield line.rstrip("\n")
+
+# for line in read_lines("Output.txt"):
+#     print(line)
+
+
+"""
+Create a generator that yields rows from a CSV file as dictionaries, using the first row as keys.
+"""
+def dictionary(filepath):
+    with open(filepath,"r") as f:
+        header =next(f).strip().split(",")
+        for line  in f:
+            values=line.strip().split(",")
+
+            yield dict(zip(header,values))
+       
+       
+for row in dictionary("data.csv"):
+    print(row)
