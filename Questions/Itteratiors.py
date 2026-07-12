@@ -208,16 +208,20 @@ Create a generator that yields rows from a CSV file as dictionaries, using the f
 Create two generators: one that yields numbers and another that squares them. Pipe the first into the second.
 """
 
-def number_producer(num):
+# def number_producer(num):
 
-    for item in num:
-        yield Squares(item)
+#     for item in num:
+#         yield Squares(item)
 
     
-def Squares(num):
-    return num ** 2
+# def Squares(num):
+#     return num ** 2
 
 
-num=[1,2,3,4,5]
-for i in number_producer(num):
-    print(i, end=" ")
+# num=[1,2,3,4,5]
+# for i in number_producer(num):
+#     print(i, end=" ")
+
+
+
+
