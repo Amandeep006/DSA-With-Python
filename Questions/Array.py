@@ -92,4 +92,25 @@ Given an array of integers, find the elements which have an even number of digit
 # print("Count =", len(even_digits))
 
 
+"""
+2 sum array 
+"""
+num=[1,5,3,6,2]
+target=4
+
+num.sort()
+start=0
+end=len(num)-1
+
+while start<end:
+    if num[start]+num[end]==target:
+        print(f"The numbers are {num[start]},{num[end]}.")
+        break
+
+    elif num[start]+num[end]<target:
+        start+=1
+
+    else:
+        end-=1
+
 
