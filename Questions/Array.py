@@ -118,21 +118,97 @@ Given an array of integers, find the elements which have an even number of digit
 3 Sum array
 """
 
-num=[1,5,3,9,7,6]
-target=9
-start=0
-end=len(num)-1
-mid=start+1
+# num=[1,5,3,9,7,6]
+# target=9
+# start=0
+# end=len(num)-1
+# mid=start+1
 
-while True:
-    current=num[start]+num[mid]+num[end]
-    if current==target:
-        print(num[start],num[mid],num[end])
-        break
+# while True:
+#     current=num[start]+num[mid]+num[end]
+#     if current==target:
+#         print(num[start],num[mid],num[end])
+#         break
 
-    elif current<target:
-        start+=1
+#     elif current<target:
+#         start+=1
 
+#     else:
+#         end-=1
+
+"""
+DNF Algorithm
+"""
+
+# def DNF(num):
+#     low=0
+#     high=len(num)-1
+#     mid=0
+
+#     while mid<high:
+#         if num[mid]==0:
+#             Swap(low,mid,num)
+#             # num[low],num[mid]=num[mid],num[low]
+#             mid+=1
+#             low+=1
+
+#         elif num[mid]==1:
+#             mid+=1
+
+#         else :
+#             Swap(mid,high,num)
+#             # num[mid],num[high]=num[mid],num[high]
+#             high-=1
+
+#     return num
+
+# def Swap(a,b,num):
+#     temp=num[a]
+#     num[a]=num[b]
+#     num[b]=temp
+
+#     return num
+
+
+# num=[0,2,1,2,1,1,0,0,2]
+# # print(f"DNF form : {DNF(num)}.")
+# print(DNF(num))
+
+"""
+Moore's ALgorithm 
+"""
+
+def Find(arr):
+    arr.sort()
+    majority=arr[0]
+    count=0
+
+    for i in arr:
+        if count==0:
+            majority=i
+            count=1
+
+        elif majority==i:
+            count+=1
+
+        else:
+            count-=1
+
+    vote=0
+        
+    for i in arr :
+        if majority==i:
+            vote+=1
+
+    if vote>len(arr)/2:
+        return majority , vote
+    
     else:
-        end-=1
+        return -1
+
+
+
+
+arr=[1,3,3,1,3,3,2]
+print(Find(arr))
 
