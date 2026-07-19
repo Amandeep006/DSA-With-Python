@@ -240,24 +240,12 @@ Moves Zeros to end without Brute force.
 """
 
 arr=[0,1,2,0,5]
-n=len(arr)-1
 
+count=0
 for i in range(len(arr)):
-    if (arr[i]==0):
-        temp=arr[i]
-        arr[i]=arr[i+1]
-        arr[i+1]=temp
+    if arr[i]!=0:
+        arr[i],arr[count]=arr[count],arr[i]
+        count+=1
 
-        if (arr[i]==0 and arr[i-1]==0):
-            camp=arr[i]
-            arr[i]=arr[i+1]
-            arr[i+1]=camp
-
-            ramp=arr[i-1]
-            arr[i-1]=arr[i]
-            arr[i]=ramp
-
-    if n==0 and (n-1)==0:
-        break
 
 print(arr)
