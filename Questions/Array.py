@@ -178,37 +178,86 @@ DNF Algorithm
 Moore's ALgorithm 
 """
 
-def Find(arr):
-    arr.sort()
-    majority=arr[0]
-    count=0
+# def Find(arr):
+#     arr.sort()
+#     majority=arr[0]
+#     count=0
 
-    for i in arr:
-        if count==0:
-            majority=i
-            count=1
+#     for i in arr:
+#         if count==0:
+#             majority=i
+#             count=1
 
-        elif majority==i:
-            count+=1
+#         elif majority==i:
+#             count+=1
 
-        else:
-            count-=1
+#         else:
+#             count-=1
 
-    vote=0
+#     vote=0
         
-    for i in arr :
-        if majority==i:
-            vote+=1
+#     for i in arr :
+#         if majority==i:
+#             vote+=1
 
-    if vote>len(arr)/2:
-        return majority , vote
+#     if vote>len(arr)/2:
+#         return majority , vote
     
-    else:
-        return -1
+#     else:
+#         return -1
 
 
+# arr=[1,3,3,1,3,3,2]
+# print(Find(arr))
 
 
-arr=[1,3,3,1,3,3,2]
-print(Find(arr))
+"""
+Move All Zeroes to End
+"""
 
+# arr=[1, 2, 0, 4, 3, 0, 5, 0]
+# arr=[1,0,2,0,5]
+# # arr=[10, 20, 30]
+# # arr=[0, 2, 1, 0, 3, 0, 4, 0]
+# for i in range(len(arr)):
+#     for j in range(len(arr)):
+#         if arr[j]==0:
+#             temp=arr[i]
+#             arr[i]=arr[j]
+#             arr[j]=temp
+
+#     print(arr)
+
+#     print("-----------------")
+# if 0 not in arr:
+#     print("Zero is not exist.")
+    
+# print(arr)
+
+
+"""
+Moves Zeros to end without Brute force.
+"""
+
+arr=[0,1,2,0,5]
+n=len(arr)-1
+
+for i in range(len(arr)):
+    if (arr[i]==0):
+        temp=arr[i]
+        arr[i]=arr[i+1]
+        arr[i+1]=temp
+
+        if (arr[i]==0 and arr[i-1]==0):
+            camp=arr[i]
+            arr[i]=arr[i+1]
+            arr[i+1]=camp
+
+            ramp=arr[i-1]
+            arr[i-1]=arr[i]
+            arr[i]=ramp
+
+    if n==0 and (n-1)==0:
+        break
+
+print(arr)
